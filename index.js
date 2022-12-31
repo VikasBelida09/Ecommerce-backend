@@ -12,7 +12,7 @@ const cartRoute=require('./routes/cart');
 const orderRoute=require('./routes/order');
 const stripeRoute=require('./routes/stripe');
 const mongoose=require('mongoose')
-
+mongoose.set("strictQuery", false);
 mongoose.connect(process.env.MONGO_URL)
 .then(data=>console.log('DB Connection succesful'))
 .catch(err=>console.log(err));
